@@ -13,7 +13,7 @@ export function CartEmpty({ message = "Your cart is empty" }: CartEmptyProps) {
       <ShoppingBag className="h-16 w-16 text-muted mb-4" />
       <h2 className="text-xl font-semibold mb-2">{message}</h2>
       <p className="text-muted-foreground mb-6">
-        Looks like you haven't added any items to your cart yet.
+        Looks like you have not added any items to your cart yet.
       </p>
       <Link href="/products">
         <Button>Start Shopping</Button>

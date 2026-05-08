@@ -65,7 +65,7 @@ export default function ContactPage() {
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Message Sent!</h3>
                     <p className="text-muted-foreground">
-                      Thank you for reaching out. We'll get back to you soon.
+                      Thank you for reaching out. We will get back to you soon.
                     </p>
                   </div>
                 ) : (
