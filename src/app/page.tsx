@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { Search, ShoppingCart, User, Menu, X, Phone, Star, CheckCircle, Shield, Truck, CreditCard, RefreshCw, Headphones, Laptop, Box, Zap } from "lucide-react";
+import { Star, CheckCircle, Truck, CreditCard, RefreshCw, Headphones } from "lucide-react";
 
 const PRODUCTS = [
   {
@@ -163,79 +162,8 @@ function ProductCard({ product }: { product: typeof PRODUCTS[0] }) {
 }
 
 export default function NewWayInfotechB2() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* ===== TOP BAR ===== */}
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-          <span>Best Refurbished Laptops With 6 Months Warranty | COD available on prepayment of Rs 500</span>
-          <div className="flex items-center gap-4 mt-2 md:mt-0">
-            <a href="tel:+91931736826" className="flex items-center gap-2">
-              <Phone className="w-4 h-4" /> +91-9310736826
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* ===== HEADER ===== */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
-                <Laptop className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-black text-gray-900">NewWayInfotech</span>
-            </Link>
-
-            {/* Search */}
-            <div className="hidden md:flex flex-1 max-w-md mx-8">
-              <div className="relative w-full">
-                <input
-                  type="text"
-                  placeholder="Search laptops..."
-                  className="w-full pl-4 pr-12 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 text-gray-900 placeholder:text-gray-500"
-                />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-orange-500 rounded-md">
-                  <Search className="w-4 h-4 text-white" />
-                </button>
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="flex items-center gap-4">
-              <Link href="/account" className="hidden md:flex items-center gap-2 text-gray-900 hover:text-orange-600">
-                <User className="w-5 h-5" />
-                <span className="text-sm">My Account</span>
-              </Link>
-              <Link href="/cart" className="p-2 text-gray-900 hover:text-orange-600 relative">
-                <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">0</span>
-              </Link>
-              <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Categories Nav */}
-        <div className="hidden md:block border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 py-3">
-            <div className="flex items-center gap-8 text-sm font-medium overflow-x-auto">
-              <button className="text-gray-900 whitespace-nowrap">Shop By Usage ▼</button>
-              <button className="text-gray-900 whitespace-nowrap">Shop By Brands ▼</button>
-              <button className="text-gray-900 whitespace-nowrap">Shop By Processor ▼</button>
-              <button className="text-gray-900 whitespace-nowrap">Shop By Price ▼</button>
-              <Link href="#products" className="text-gray-500 whitespace-nowrap">All Products</Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* ===== HERO BANNER ===== */}
       <section className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -250,12 +178,12 @@ export default function NewWayInfotechB2() {
                 6 Month Warranty | 100% Tested & Cleaned | Best Quality Guaranteed
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                <Link href="/products" className="bg-white text-orange-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all inline-block">
                   Shop Now
-                </button>
-                <button className="border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition-all">
+                </Link>
+                <Link href="/products" className="border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition-all inline-block">
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
             <div className="relative flex items-center justify-center">
@@ -326,64 +254,6 @@ export default function NewWayInfotechB2() {
           </div>
         </div>
       </section>
-
-      {/* ===== FOOTER ===== */}
-      <footer className="bg-white border-t border-gray-200 py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
-                  <Laptop className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-black text-gray-900">NewWayInfotech</span>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Premium Import Laptops in A+++ Condition. Your trusted source for professionally tested refurbished and new import business laptops.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Quick Links</h4>
-              <ul className="space-y-3 text-gray-600 text-sm">
-                <li><a href="#" className="hover:text-orange-500 transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Terms & Conditions</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Categories</h4>
-              <ul className="space-y-3 text-gray-600 text-sm">
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Dell Laptops</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">HP Laptops</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Lenovo Laptops</a></li>
-                <li><a href="#" className="hover:text-orange-500 transition-colors">Apple Products</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Contact</h4>
-              <ul className="space-y-3 text-gray-600 text-sm">
-                <li className="flex items-center gap-2">
-                  <span className="text-orange-500">📞</span> +91-9310736826
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-orange-500">✉️</span> info@newwayinfotech.com
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-orange-500">📍</span> Mumbai, India
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-            © 2025 NewWayInfotech. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
